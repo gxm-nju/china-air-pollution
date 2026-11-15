@@ -1,0 +1,11 @@
+numpy==1.26.4
+pandas==2.2.2
+xarray==2023.6.0
+scipy==1.13.1
+pyarrow==24.0.0
+scikit-learn==1.5.1
+rasterio==1.4.4
+duckdb==1.4.1
+osmium==4.1.1
+shapely==2.1.2
+matplotlib==3.9.2

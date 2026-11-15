@@ -1,0 +1,12 @@
+{
+  "era5_cityhours": 1078464,
+  "era5_bytes": 50172333,
+  "era5_valid_blh": 899376,
+  "era5_complete_variables": 899376,
+  "yz_ground_matched": 128940,
+  "eligible_episode_clusters": 26,
+  "silhouette": 0.3714318400689694,
+  "network_candidates": 25,
+  "positive_corr_025": 13,
+  "candidate_fire_gridhours": 6549
+}

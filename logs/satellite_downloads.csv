@@ -1,0 +1,4 @@
+month,bytes_transport_only,sha256,url
+202301,588033173,3a7af96e8f6cfc73daa72ecdff24fc121d6a15cf131d5e249d7565b9b66a4fdc,https://d1qb6yzwaaq4he.cloudfront.net/airpollution/no2col/cci-no2/tropomi/2023/ESACCI-PREC-L3C-NO2-S5P_TROPOMI_KNMI-0360x0720_1D-202301-fv2.0.zip
+202302,511230077,6746e90d79fa48247eb9d29e5e1484675b0effa55ec4cb4354532dcb721596c2,https://d1qb6yzwaaq4he.cloudfront.net/airpollution/no2col/cci-no2/tropomi/2023/ESACCI-PREC-L3C-NO2-S5P_TROPOMI_KNMI-0360x0720_1D-202302-fv2.0.zip
+202303,546974318,bcf0452d9137c8b0b11baf04baf0990e01e7d8b7db04e0c562eaa5c85e7c0e12,https://d1qb6yzwaaq4he.cloudfront.net/airpollution/no2col/cci-no2/tropomi/2023/ESACCI-PREC-L3C-NO2-S5P_TROPOMI_KNMI-0360x0720_1D-202303-fv2.0.zip

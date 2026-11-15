@@ -1,0 +1,5 @@
+file,snapshot_utc,source,bytes,sha256,licence
+anhui_20261114.osm.pbf,2026-11-14,https://download.geofabrik.de/asia/china/anhui-latest.osm.pbf,43859104,992ba6de99502743e457c7565555183f812da7ee17f87abbab84b101b935265a,"ODbL 1.0, © OpenStreetMap contributors; Geofabrik distribution"
+jiangsu_20261114.osm.pbf,2026-11-14,https://download.geofabrik.de/asia/china/jiangsu-latest.osm.pbf,80581149,3a57ad724919e08fd7e0e9d79bbfea780689d99e077583362cc37a588cf749aa,"ODbL 1.0, © OpenStreetMap contributors; Geofabrik distribution"
+shanghai_20261114.osm.pbf,2026-11-14,https://download.geofabrik.de/asia/china/shanghai-latest.osm.pbf,26108932,dbc70f2c8ea3e98750f8a45db659155412d0cf022a70ef0a9da5c071e9ab4a1c,"ODbL 1.0, © OpenStreetMap contributors; Geofabrik distribution"
+zhejiang_20261114.osm.pbf,2026-11-14,https://download.geofabrik.de/asia/china/zhejiang-latest.osm.pbf,91342392,13d74265f5f6acb1be6a7767fd49768ccdce2dbda37ef2297b3c2cc5588e6f3e,"ODbL 1.0, © OpenStreetMap contributors; Geofabrik distribution"

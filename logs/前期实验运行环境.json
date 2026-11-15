@@ -1,0 +1,37 @@
+{
+  "run_date": "2026-11-15",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "run_order": [
+    "fires.py",
+    "analyze.py",
+    "ground.py",
+    "fusion.py",
+    "parquet.py",
+    "satellite_windows.py (GDAL; from global transport sources)",
+    "osm.py (GDAL)",
+    "satellite_models.py",
+    "report.py",
+    "verify.py"
+  ],
+  "dependency_versions": [
+    "numpy==2.3.5",
+    "pandas==2.2.3",
+    "scikit-learn==1.8.0",
+    "matplotlib==3.10.8",
+    "duckdb==1.4.4"
+  ],
+  "verified_inputs": {
+    "national_daily_files": 103,
+    "national_study_dates": 1096,
+    "city_case_dates": 2,
+    "firms_country_sensor_years": 21,
+    "mee_bulletin_months": 36,
+    "era5_cities": 41,
+    "s5p_days": 90,
+    "osm_pbf": 4
+  },
+  "prior_mac_files_included": false,
+  "independent_maps_review": "pending",
+  "comments": "全期以可用数据为准；试跑统计与本地复算分列。"
+}
