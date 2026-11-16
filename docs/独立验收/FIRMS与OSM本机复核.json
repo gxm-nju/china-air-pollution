@@ -1,0 +1,168 @@
+{
+  "counts": {
+    "all_rows": 6977065,
+    "all_selected_columns_bytes": 303526100,
+    "retained_type0_rows": 4086779,
+    "retained_type0_original_line_bytes": 327359646,
+    "retained_type0_selected_columns_bytes": 177877606,
+    "quality_type2_rows": 2426564,
+    "quality_type2_original_line_bytes": 194320142,
+    "quality_type2_selected_columns_bytes": 105497346,
+    "rectangle_utc2023_2025_type0_rows": 141999,
+    "rectangle_utc2023_2025_type0_original_line_bytes": 11387916,
+    "rectangle_utc2023_2025_type0_selected_columns_bytes": 6169718,
+    "file_bytes": 558827644
+  },
+  "firms_manifest": [
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2019_China.csv",
+      "bytes": 6949985,
+      "sha256": "b0ac2ef98d06e9ab86387629ebfc441f1d6acceaaa51ffa1c3ad903511f9972e",
+      "rows": 88539
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2020_China.csv",
+      "bytes": 6374819,
+      "sha256": "7d232af240d2168e6ecd4358268094751055b9f423163efd60500eb4fff4278e",
+      "rows": 81212
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2021_China.csv",
+      "bytes": 6184286,
+      "sha256": "3dcc30d351d2e3c4bfcc6d328daf449301aac5c029b62f2096907eec0c33b5f9",
+      "rows": 78834
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2022_China.csv",
+      "bytes": 6131845,
+      "sha256": "70bc1a5dcf477a240e7ae5f4140d51480c6691a3996661f5f3413a0e6cff4cf0",
+      "rows": 78059
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2023_China.csv",
+      "bytes": 7591042,
+      "sha256": "2bae51e1333fec4c6ba8461f322f1730c5b4201ff025ef60acc127306e00862c",
+      "rows": 95249
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2024_China.csv",
+      "bytes": 8082755,
+      "sha256": "634a59362daa0ac2e22514b0daf231267ced6cd57c91f9d99af3d202bdbab391",
+      "rows": 101256
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/modis_2025_China.csv",
+      "bytes": 8208771,
+      "sha256": "cb686f1aabe6fc944aba88cde636a4d6116cff6d6236d0fbc45dcc87b9ad6f44",
+      "rows": 102582
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2019_China.csv",
+      "bytes": 42372114,
+      "sha256": "2ace19c302335cc42f94267702b14b9083d1fc2c3b67e16b76cc48da8bb4018e",
+      "rows": 521967
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2020_China.csv",
+      "bytes": 38906707,
+      "sha256": "1d53940486df9e1ac3a79c40a9cd3c8a2a27aa5125268d95cdcacd96646b7649",
+      "rows": 479394
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2021_China.csv",
+      "bytes": 34162653,
+      "sha256": "bf6534ecdad50d44fd13fc0293f95e898631e75cec5f5f7d3211c2b2788145f2",
+      "rows": 420960
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2022_China.csv",
+      "bytes": 35042861,
+      "sha256": "bd828c63af3aafe842f29ce9197672e128614af9498a35de182d398e6a21a8f4",
+      "rows": 431759
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2023_China.csv",
+      "bytes": 36064485,
+      "sha256": "014c41fe2651d8c960c290723f96ae8cd1207f7ea97e7fc377b26e63500d9751",
+      "rows": 444367
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2024_China.csv",
+      "bytes": 36996270,
+      "sha256": "21ca54921e8cebbe5fa4bac318a92097a6bafc6454dd924c662d08646e01f48f",
+      "rows": 455735
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-jpss1_2025_China.csv",
+      "bytes": 40064379,
+      "sha256": "c8ee7a464ece4478c06665cc93eca8f3d5245b7fb97553b1002368adfed91824",
+      "rows": 493475
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2019_China.csv",
+      "bytes": 39490316,
+      "sha256": "63b7a894d51f7903efbf1fa78ba8545915b7bbe2557ffb876476b0be7310eca8",
+      "rows": 498793
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2020_China.csv",
+      "bytes": 36930469,
+      "sha256": "f9b9c379dc8ab24f2117329c2a3436b4cd61f802622553adee4aa5226b9865b9",
+      "rows": 466552
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2021_China.csv",
+      "bytes": 33184928,
+      "sha256": "5542500aaf2499fe2a10344541185824f8ba6e963bfc3428c0b945c4c7ec40b7",
+      "rows": 419339
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2022_China.csv",
+      "bytes": 32083234,
+      "sha256": "c42c6019b67d3ec3e56f89a05095460c16f7a2c123283d2f95bdf12704c31613",
+      "rows": 405300
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2023_China.csv",
+      "bytes": 33958972,
+      "sha256": "a2c8af5f7b45eaaa1fb1c154dd986898ec8c8f67efb310b31aedb8ab11f02aad",
+      "rows": 429027
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2024_China.csv",
+      "bytes": 32783622,
+      "sha256": "f28343006cebe1a4f8dfccbcc8eb2ab5cb48ab715700305057870b7bcba31176",
+      "rows": 414070
+    },
+    {
+      "path": "多源数据与实验/data/raw/firms/viirs-snpp_2025_China.csv",
+      "bytes": 37263131,
+      "sha256": "c1f308814c23aeaf87d2053282180d2511413aefff31fbb52ba37a41bf1947a8",
+      "rows": 470596
+    }
+  ],
+  "osm_subsets": [
+    {
+      "path": "data/raw/osm/station_cells.osm.pbf",
+      "bytes": 30769620,
+      "sha256": "7f6a3956177475c4af89fde8b437620e79dfea520d77d32aa6231755a6ee0b32"
+    },
+    {
+      "path": "扩展实验/核验/农业用地参照.osm.pbf",
+      "bytes": 36204657,
+      "sha256": "8377cc04d984ba04cb23f7068d218c8ae11e637687932b193f4e9dfaafbcc9ad"
+    },
+    {
+      "path": "扩展实验/核验/行政区边界.osm.pbf",
+      "bytes": 46530135,
+      "sha256": "95bb07d0e16067c9b41662fe1dce72d45dc1796d3730d8f9fa5122f6f04936e7"
+    }
+  ],
+  "osm_unadjusted_sum_bytes": 113504412,
+  "warnings": [
+    "Column bytes are an unmaterialized LF-CSV estimate, not a file size.",
+    "Do not add full files, selected rows and derived data together.",
+    "OSM sum is not object-deduplicated.",
+    "This audit does not establish total course-compliant effective volume."
+  ]
+}

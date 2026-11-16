@@ -48,7 +48,24 @@ def main():
             s.to_csv(I/'no2_four_sources.csv',index=False)
             con=duckdb.connect();con.register('t',s)
             con.execute('COPY t TO ? (FORMAT PARQUET, COMPRESSION ZSTD)',[str(I/'no2_four_sources.parquet')])
-        cv=list(GroupKFold(n_splits=5).split(s,groups=groups))
+        # Published folds preserve the original split even when NumPy tie sorting
+        # differs across CPU architectures. Never reselect folds by model scores.
+        frozen_path=BASE/'data/cleaned/no2_spatial_folds.json'
+        if frozen_path.exists():
+            frozen=json.loads(frozen_path.read_text())[str(shift)]
+            counts=groups.value_counts().to_dict()
+            if counts != frozen['counts']:
+                raise ValueError('Published spatial-fold manifest does not match input groups/counts')
+            fold_ids=groups.map(frozen['folds']).to_numpy()
+            cv=[]
+            for fold in range(5):
+                train=np.flatnonzero(fold_ids != fold); test=np.flatnonzero(fold_ids == fold)
+                assert len(train) and len(test)
+                assert set(groups.iloc[train]).isdisjoint(groups.iloc[test])
+                assert set(s.city.iloc[train]).isdisjoint(s.city.iloc[test])
+                cv.append((train,test))
+        else:
+            cv=list(GroupKFold(n_splits=5).split(s,groups=groups))
         time_split=[(np.flatnonzero(s.date<'2023-03-01'),np.flatnonzero(s.date>='2023-03-01'))]
         for label,splits in [('留出卫星格点',cv),('留出3月',time_split)]:
             for name,cols in feat_sets.items():

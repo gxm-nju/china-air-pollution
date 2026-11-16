@@ -30,12 +30,12 @@ def main(public=False):
     rows=[cov['地面日数']/cov['月份日数'],cov['ERA5四要素有效城市小时']/cov['月份日数']/984,cov['ERA5边界层有效城市小时']/cov['月份日数']/984,cov['L3研究窗口日数']/cov['月份日数']]
     fig,ax=plt.subplots(figsize=(10,2.7));im=ax.imshow(rows,aspect='auto',vmin=0,vmax=1,cmap='YlGnBu')
     ax.set_yticks(range(4),['地面站点日文件','ERA5 四要素','ERA5 边界层','卫星 L3 日窗口']);ax.set_xticks(range(0,36,3),cov['月份'][::3],rotation=30,ha='right')
-    ax.set_title('2023—2025 年逐月覆盖率');fig.colorbar(im,ax=ax,shrink=.8);done(fig,'01_逐月覆盖')
+    ax.set_title('历史 134 日基线：2023—2025 年逐月覆盖率');fig.colorbar(im,ax=ax,shrink=.8);done(fig,'01_逐月覆盖')
     q=pd.read_csv(ROOT/'results/火点相同锚点对照.csv' if public else M/'results/火点相同锚点对照.csv');fig,ax=plt.subplots(figsize=(8,3.4))
     for i,(k,v) in enumerate(q.groupby('scope',sort=False)):
         color=['#137b75','#a65931'][i];x=v.lag.to_numpy()+i*.5
         ax.errorbar(x,v.mean_delta,yerr=[v.mean_delta-v.ci_low,v.ci_high-v.mean_delta],label=k,marker='o',color=color,capsize=4)
-    ax.axhline(0,color='#7b827c',lw=.7);ax.set(xlabel='距观测火点的时间（小时）',ylabel='增幅之差（µg/m³）',title='下风与上风城市的 PM₂.₅ 增幅差');ax.legend(fontsize=9);done(fig,'02_火点滞后')
+    ax.axhline(0,color='#7b827c',lw=.7);ax.set(xlabel='距观测火点的时间（小时）',ylabel='增幅之差（µg/m³）',title='历史 134 日基线：下风与上风城市的 PM₂.₅ 增幅差');ax.legend(fontsize=9);done(fig,'02_火点滞后')
     sat=(pd.read_parquet(ROOT/'data/integrated/no2_four_sources.parquet') if public else pd.read_csv(M/'data/integrated/no2_four_sources.csv'));sat['柱浓度组']=pd.qcut(sat.column_1e15,4,labels=['Q1','Q2','Q3','Q4'])
     fig,axes=plt.subplots(1,4,figsize=(10,3.1),sharex=True,sharey=True)
     for ax,(k,v) in zip(axes,sat.groupby('柱浓度组',observed=True)):
@@ -52,5 +52,5 @@ def main(public=False):
         c=places.loc[r.source];ax.annotate('',xy=(nj.lon,nj.lat),xytext=(c.lon,c.lat),arrowprops=dict(arrowstyle='->',color='#387b78',alpha=.8,lw=r.r*4))
         ax.scatter(c.lon,c.lat,c='#397e79',s=18);ax.annotate(f'{r.source} · {r.lag}h',(c.lon,c.lat),xytext=(4,5),textcoords='offset points',fontsize=9)
     ax.scatter(nj.lon,nj.lat,c='#ba6041',s=40);ax.annotate('南京',(nj.lon,nj.lat),xytext=(4,-12),textcoords='offset points');ax.margins(.21)
-    ax.set(title='风向筛选后与南京相关性最高的六座城市',xlabel='东经（°）',ylabel='北纬（°）');done(fig,'05_南京候选网络')
+    ax.set(title='历史探索：风向筛选后与南京相关性最高的六座城市',xlabel='东经（°）',ylabel='北纬（°）');done(fig,'05_南京候选网络')
 if __name__=='__main__':main()
