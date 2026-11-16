@@ -8,6 +8,7 @@
 |---|---|
 | 项目报告 | [在线阅读项目报告](docs/项目报告.md) · [可离线阅读的 HTML](docs/项目报告.html) · [原项目计划书](docs/项目计划书.pdf) |
 | 课堂展示 | [可编辑 PPT](docs/课堂展示.pptx) · [PDF 预览](docs/课堂展示.pdf) |
+| 汇报推敲稿 | [三个研究问题、时间补验与八页 PPT 改版思路](docs/研究问题与课堂汇报思路.md) |
 | 可运行代码 | [离线复算入口](reproduce.py) · [采集与研究脚本](scripts) · [绘图程序](visualization/redraw.py) |
 | 来源和执行记录 | [数据来源、字段、获取方式与使用条件](data_sources.md) · [采集与运行日志](logs) |
 | 数据样本与元数据 | [原始样本](data/raw) → [清洗与匹配表](data/cleaned) → [融合表](data/integrated) · [逐文件校验和覆盖清单](metadata) |
