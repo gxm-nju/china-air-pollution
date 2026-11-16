@@ -52,7 +52,29 @@ def satellite():
     print(f"卫星 {len(scores)} 组滚动留出 MAE 复算一致")
 
 
+def review():
+    city = pd.read_parquet(HERE / "全国城市日.parquet").query("yrd41 and qualified")
+    harvest = city[city.date.dt.month.isin([6,10,11])]
+    north = city[city.city.isin("蚌埠 淮北 亳州 宿州 阜阳 淮南 徐州 连云港 宿迁 淮安 盐城".split())]
+    assert (len(harvest),harvest.heavy.sum(),len(north),north.heavy.sum()) == (10898,0,11837,98)
+    pairs = pd.read_csv(HERE / "同网格未检出日配对.csv.gz",parse_dates=["time","control_time"])
+    assert len(pairs) == 1566 and (pairs.time.dt.hour == pairs.control_time.dt.hour).all()
+    np.testing.assert_allclose(pairs.event - pairs.control,pairs.difference,atol=1e-12)
+    np.testing.assert_allclose(pairs[["event","control","difference"]].mean(),[3.2522393,1.8061311,1.4461082],atol=1e-6)
+    dust = pd.read_csv(HERE / "三月五城逐小时.csv",parse_dates=["time"])
+    suqian = dust[dust.city.eq("宿迁")]
+    baseline = suqian[suqian.time.dt.day < 23].dust
+    current = suqian[suqian.time.dt.day == 23].dust
+    assert (len(baseline),len(current)) == (72,24)
+    np.testing.assert_allclose(current.mean()-baseline.mean(),3.9139782,atol=1e-7)
+    ledger = pd.read_csv(HERE / "更新原始输入校验.csv.gz").drop_duplicates("sha256")
+    subtotal = ledger.groupby("source").bytes.sum()
+    assert (subtotal["卫星"],subtotal["气象"],subtotal.sum()) == (40688405,85150365,4558091453)
+    print("季节、地理分布、未检出日配对、三月细沙尘和来源字节均通过")
+
+
 if __name__ == "__main__":
     ground()
     fire()
     satellite()
+    review()
