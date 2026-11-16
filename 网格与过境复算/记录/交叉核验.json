@@ -1,0 +1,41 @@
+{
+  "raw_files": {
+    "ERA5": {
+      "count": 111,
+      "sum": 266219820
+    },
+    "S5P": {
+      "count": 142,
+      "sum": 16478285
+    }
+  },
+  "2023_satellite_sample": {
+    "orbit": "S5P_OFFL_L2__NO2____20230116T034608_20230116T052738_27251",
+    "row": 3059,
+    "col": 134,
+    "utc": "2023-01-16 04:50:32.394000"
+  },
+  "2024_satellite_sample": {
+    "orbit": "S5P_OFFL_L2__NO2____20240116T030009_20240116T044139_32429",
+    "row": 3179,
+    "col": 4,
+    "utc": "2024-01-16 04:06:14.294000"
+  },
+  "2025_satellite_sample": {
+    "orbit": "S5P_OFFL_L2__NO2____20250116T033845_20250116T052015_37622",
+    "row": 3063,
+    "col": 115,
+    "utc": "2025-01-16 04:43:12.747000"
+  },
+  "blh_overlap_values": 522288,
+  "verified_fit_comparisons": 5,
+  "region_calendar": {
+    "matched_eligible_days": 1077,
+    "days_with_heavy_city": 34
+  },
+  "pixels": {
+    "region_pixels": 1631231,
+    "quality_pixels": 972101,
+    "city_quality_pixels": 55892
+  }
+}

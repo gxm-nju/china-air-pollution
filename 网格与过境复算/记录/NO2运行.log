@@ -1,0 +1,16 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.optional.neon'. Detail: [errno 1] Operation not permitted
+      city_days  dates  cities               local_min               local_max
+year                                                                          
+2023        864     28      41 2023-01-01 12:33:18.852 2023-01-31 13:11:16.744
+2024        731     28      41 2024-01-02 13:07:46.308 2024-01-31 14:04:48.777
+2025        998     29      41 2025-01-01 12:24:45.895 2025-01-30 13:22:38.431
+             run     base   extra  n_train  n_test  test_days  test_cities   mae0  mae1  delta  ci_low  ci_high  r2_base  r2_extra
+       2024年1月外推      仅L2 L2加网格气象      864     731         28           41 10.319 8.379 -1.939  -2.615   -1.281    0.186     0.407
+    2024年1月气象表对照 L2加旧城市气象 L2加网格气象      864     731         28           41  8.462 8.379 -0.083  -0.166    0.008    0.395     0.407
+       2025年1月外推      仅L2 L2加网格气象      864     998         29           41  9.150 7.810 -1.340  -1.963   -0.729    0.299     0.451
+    2025年1月气象表对照 L2加旧城市气象 L2加网格气象      864     998         29           41  7.808 7.810  0.002  -0.107    0.115    0.456     0.451
+2023年1月同城同小时共同样本    L3加气象   L2加气象      459     296         11           41  4.813 4.378 -0.435  -0.642   -0.192    0.469     0.546
+overlap rows, exact hour 820 755

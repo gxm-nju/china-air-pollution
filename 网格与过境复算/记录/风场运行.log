@@ -1,0 +1,11 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.optional.neon'. Detail: [errno 1] Operation not permitted
+grid matched contrast 638 1.2050498995783034 [-2.13863905  4.91314325]
+          region_ws           region_blh            
+               size      mean       size        mean
+长三角超阈值城市数                                           
+False          1043  3.312683       1043  492.268194
+True             34  2.975293         34  354.622334
+anchor total, in domain and time, both computable 4299 4299 4146 [{'scope': '全部已下载', 'n': 4146, 'days': 611, 'citywind': 4.024613282562, 'gridwind': 4.056272205675014, 'grid_ci': [1.7635463793764647, 6.482567741614775], 'change': 0.03165892311301417, 'change_ci': [-0.11157754089594346, 0.18289227498727764], 'changed': 1738, 'median_angle': 3.3233108520507812}, {'scope': '2024年1月', 'n': 102, 'days': 21, 'citywind': -1.3517314240816203, 'gridwind': -2.00774585757642, 'grid_ci': [-13.11802347836677, 15.822028165558043], 'change': -0.6560144334947989, 'change_ci': [-1.7882543506462891, 0.08120544668616447], 'changed': 41, 'median_angle': 2.8748302459716797}]
