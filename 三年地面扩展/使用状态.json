@@ -1,0 +1,18 @@
+{
+  "used_days": 1096,
+  "new_site_days": 962,
+  "missing_site_days": 0,
+  "ground_unique_raw_bytes": 1998769634,
+  "source_digests": 1096,
+  "actual_city_hour_rows": 8694152,
+  "pm25_station_hour_values": 40257927,
+  "no2_station_hour_values": 40317913,
+  "dates_with_qualified_pm25": 1077,
+  "city_days_qualified": 361867,
+  "national_episodes": 1586,
+  "yrd_episodes": 120,
+  "nanjing_episodes": 0,
+  "q1_new_ground_Jun_Oct_Nov_dates": 242,
+  "q2_L3_windows": 330,
+  "q2_new_ground_dates_with_L3": 239
+}

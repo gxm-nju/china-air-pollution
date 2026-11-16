@@ -1,0 +1,9 @@
+{
+  "downloaded_bytes": 12372984,
+  "overlap": 984,
+  "overlap_mae": 1.257935795357557,
+  "overlap_max": 2.4908447265625,
+  "r": 0.9999905942994208,
+  "filled_city_hours": 179088,
+  "total_missing_old": 179088
+}

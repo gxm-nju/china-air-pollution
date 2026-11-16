@@ -1,0 +1,12 @@
+{
+  "day": "20230301",
+  "member_sha256": "c53c79a18273c64316e37d1b13cbe24f038fee0dcf711306558403abdaf0bb3d",
+  "valid_cells": 1114,
+  "differences": {
+    "column": 0.0,
+    "observations": 0.0,
+    "cloud": 0.0,
+    "fraction_local_day": 0.0,
+    "uncertainty": 0.0
+  }
+}

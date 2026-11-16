@@ -1,0 +1,13 @@
+{
+  "air_input": "../分析/全量快照/全国城市小时.parquet",
+  "ground_only_input": true,
+  "air_sha256": "753fa40886398fdcbc92cbf9efb0ee2b831550dc356fcd8491d6d21960b1f5d4",
+  "regional_days": 330,
+  "regional_bytes": 5252920,
+  "unique_matched_city_days": 6933,
+  "matched_dates": 307,
+  "tested_months": 9,
+  "validated_pilot_city_days": 3690,
+  "used_satellite_grid_days": 6223,
+  "used_grid_table_bytes": 99473
+}

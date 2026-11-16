@@ -1,0 +1,21 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.optional.neon'. Detail: [errno 1] Operation not permitted
+已分析新增日期 60/962
+已分析新增日期 120/962
+已分析新增日期 180/962
+已分析新增日期 240/962
+已分析新增日期 300/962
+已分析新增日期 360/962
+已分析新增日期 420/962
+已分析新增日期 480/962
+已分析新增日期 540/962
+已分析新增日期 600/962
+已分析新增日期 660/962
+已分析新增日期 720/962
+已分析新增日期 780/962
+已分析新增日期 840/962
+已分析新增日期 900/962
+已分析新增日期 960/962
+{"used_days": 1096, "new_site_days": 962, "missing_site_days": 0, "ground_unique_raw_bytes": 1998769634, "source_digests": 1096, "actual_city_hour_rows": 8694152, "pm25_station_hour_values": 40257927, "no2_station_hour_values": 40317913, "dates_with_qualified_pm25": 1077, "city_days_qualified": 361867, "national_episodes": 1586, "yrd_episodes": 120, "nanjing_episodes": 0, "q1_new_ground_Jun_Oct_Nov_dates": 242, "q2_L3_windows": 330, "q2_new_ground_dates_with_L3": 239}
