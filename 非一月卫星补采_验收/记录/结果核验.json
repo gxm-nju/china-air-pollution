@@ -1,0 +1,19 @@
+{
+  "months": 36,
+  "catalog_orbits": 1695,
+  "valid_orbits": 1694,
+  "nonempty_orbits": 1688,
+  "empty_orbits": 6,
+  "bytes": 196276931,
+  "region_pixels": 19346209,
+  "quality_pixels": 9017775,
+  "city_quality_pixels": 510439,
+  "satellite_city_days": 26718,
+  "matched_city_days": 26229,
+  "dates_used": 1025,
+  "selected_orbits": 1370,
+  "model_orbits": 1341,
+  "model_orbit_file_bytes": 181717595,
+  "seasonal_comparisons": 16,
+  "historical_january_tests_reproduced": 2
+}

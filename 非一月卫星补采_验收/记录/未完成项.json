@@ -1,0 +1,7 @@
+[
+  {
+    "month": "2024-10",
+    "orbit": "S5P_OFFL_L2__NO2____20241003T045304_20241003T063434_36133",
+    "reason": "MEEO: OSError('Unable to open file (truncated file: eof = 69632, sblock->base_addr = 0, stored_eof = 592476493)') | Planetary Computer: HTTPError HTTP=404"
+  }
+]
