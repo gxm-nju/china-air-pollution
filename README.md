@@ -8,16 +8,13 @@
 
 ## 提交材料
 
-| 材料 | 从哪里开始 |
-|---|---|
-| 项目报告 | [完整实验总说明（Word）](docs/长三角城市重污染日实验总说明.docx) · [在线阅读项目报告](docs/项目报告.md) · [可离线阅读的 HTML](docs/项目报告.html) · [原项目计划书](docs/项目计划书.pdf) |
-| 课堂展示 | [长三角城市重污染日：污染过程与卫星监测（PPT）](docs/课堂展示.pptx) · [PDF 预览](docs/课堂展示.pdf) |
-| 汇报推敲稿 | [逐页汇报与讲稿](docs/研究问题与课堂汇报思路.md) |
-| 可运行代码 | [离线复算入口](reproduce.py) · [采集与研究脚本](scripts) · [绘图程序](visualization/redraw.py) |
-| 来源和执行记录 | [数据来源、字段、获取方式与使用条件](data_sources.md) · [采集与运行日志](logs) |
-| 数据样本与元数据 | [原始样本](data/raw) → [清洗与匹配表](data/cleaned) → [融合表](data/integrated) · [逐文件校验和覆盖清单](metadata) |
-| 跨源关联图 | [三条研究路径的来源、关联键与分析单位](visualization/跨源关联图.png) · [单独图件与五张分析图](visualization) |
-| AI 使用记录 | [工具、提示、采纳与纠错、验证及待成员填写项](AI_USAGE.md) |
+- [项目报告（Word）](docs/长三角城市重污染日实验总说明.docx) · [Markdown](docs/项目报告.md) · [HTML](docs/项目报告.html) · [原项目计划书](docs/项目计划书.pdf)
+- [课堂展示（PPT）](docs/课堂展示.pptx) · [PDF](docs/课堂展示.pdf) · [逐页讲稿](docs/研究问题与课堂汇报思路.md)
+- [采集代码](scripts/collect.py) · [清洗代码](scripts/ground.py) · [分析代码](scripts/analysis.py) · [可视化代码](visualization/redraw.py) · [复算入口](reproduce.py)
+- [数据源清单](data_sources.md) · [采集与实验日志](logs)
+- [原始样本](data/raw) · [清洗样本](data/cleaned) · [融合数据](data/integrated) · [元数据与校验清单](metadata)
+- [跨源关联图](visualization/跨源关联图.png) · [研究图表](visualization)
+- [AI 使用记录与反思](AI_USAGE.md)
 
 **网格与真实过境复算。** 在 4,146 个共同事件上，火点格风与城市风的 12 小时结果相差 +0.03 µg/m³。用 2023 年 1 月训练，加入气象后，2024 和 2025 年 1 月的 NO₂ 误差分别降低 1.94 和 1.34 µg/m³。[完整实验日志与配对结果](网格与过境复算/实验日志.md)
 
