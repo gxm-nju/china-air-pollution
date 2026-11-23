@@ -163,9 +163,126 @@ def add_metric_columns(slide, items, top=1.06, height=0.84, show_arrows=False):
             add_rich_text(slide, ax, top, arrow_w, height, [("→", 18, True, C_SLATE)], align=PP_ALIGN.CENTER)
 
 
+def polish_slide4(slide):
+    """润色第 4 页：消除电报式顿感，保留原西风流程图与版面。"""
+    replacements = {
+        "以西风为例，气流从西向东，火点两侧各选一组城市。":
+            "以西风为例，当气流自西向东拂过火点时，我们在两侧各选取一组对照城市。",
+        "选城市\u3000距离火点 30—200 公里，按事件时的风向划分上下风。":
+            "划分上下风：在距火点 30—200 公里内，依据当时风向区分上风组与顺风下风组。",
+        "算变化\u3000每城用事后浓度减去该城事前 24 小时均值。":
+            "扣除城市本底：每座城市先减去自身前 24 小时均值，再比较下风与上风的平均升幅差。",
+        "三年共有 4,299 个事件在五个观测时点都有可比数据，分布在 619 个日期。":
+            "三年间共有 4,299 次火点事件在五个观测时点均具备完整数据，分布在 619 个日期。",
+    }
+    for sh in slide.shapes:
+        if sh.has_text_frame:
+            full = sh.text.strip()
+            if full in replacements:
+                p = sh.text_frame.paragraphs[0]
+                if p.runs:
+                    r0 = p.runs[0]
+                    fn, fsz, fc = r0.font.name, r0.font.size, r0.font.color.rgb if r0.font.color and r0.font.color.type else C_DARK
+                    sh.text_frame.clear()
+                    np = sh.text_frame.paragraphs[0]
+                    new_txt = replacements[full]
+                    if "：" in new_txt and (new_txt.startswith("划分上下风") or new_txt.startswith("扣除城市本底")):
+                        head, tail = new_txt.split("：", 1)
+                        r1 = np.add_run()
+                        r1.text = head + "："
+                        r1.font.name = FONT_CN
+                        r1.font.size = fsz or Pt(14)
+                        r1.font.bold = True
+                        r1.font.color.rgb = C_PURPLE
+                        r2 = np.add_run()
+                        r2.text = tail
+                        r2.font.name = FONT_CN
+                        r2.font.size = fsz or Pt(14)
+                        r2.font.bold = False
+                        r2.font.color.rgb = C_DARK
+                    else:
+                        r1 = np.add_run()
+                        r1.text = new_txt
+                        r1.font.name = FONT_CN
+                        r1.font.size = fsz or Pt(14)
+                        r1.font.color.rgb = C_DARK
+
+
+def polish_slide6(slide):
+    """润色第 6 页：消除电报体，增强物理直觉与自然阅读节奏。"""
+    replacements = {
+        "汽车和电厂燃烧燃料时会排放氮氧化物，影响城市空气中的 NO₂ 浓度。":
+            "汽车尾气与电厂排放会推高近地面 NO₂；卫星俯瞰的是整层对流层总量，地面站测得的是近地面浓度。",
+        "卫星测量对流层中的 NO₂ 总量，地面站测量近地面浓度。两者可以在卫星过境时配对。":
+            "当卫星飞过城市上空时，我们可以把天上看到的柱总量与同一时刻的地面读数精确对齐。",
+        "匹配观测\u3000取城市代表点 15 公里内、质量标记 > 0.75 的像元，按真实过境时间配对。":
+            "时空对齐：选取城市 15 公里内无云遮挡（QA > 0.75）的像元，按真实扫描时刻匹配地面站与气象场。",
+        "对比模型\u3000两套岭回归分别使用卫星柱浓度，以及柱浓度加风速、边界层高度。":
+            "模型对照：比较仅用卫星柱浓度，与加入风速及边界层高度（近地面混合厚度）后的估计误差。",
+        "用 2023 年训练，分别在 2024 年和 2025 年检验平均绝对误差（MAE）。":
+            "统一用 2023 年数据训练，分别在 2024 年和 2025 年跨年盲测平均绝对误差（MAE）。",
+        "两种训练窗口：仅 2023 年 1 月、2023 全年。测试集分别有 8,499 和 8,926 个城市日。":
+            "分仅 2023 年 1 月与 2023 全年两套训练窗口，两年测试集分别为 8,499 与 8,926 个城市日。",
+    }
+    for sh in slide.shapes:
+        if sh.has_text_frame:
+            full = sh.text.strip()
+            if full in replacements:
+                p = sh.text_frame.paragraphs[0]
+                fsz = p.runs[0].font.size if p.runs else Pt(13)
+                sh.text_frame.clear()
+                np = sh.text_frame.paragraphs[0]
+                new_txt = replacements[full]
+                if "：" in new_txt and (new_txt.startswith("时空对齐") or new_txt.startswith("模型对照")):
+                    head, tail = new_txt.split("：", 1)
+                    r1 = np.add_run()
+                    r1.text = head + "："
+                    r1.font.name = FONT_CN
+                    r1.font.size = fsz or Pt(13)
+                    r1.font.bold = True
+                    r1.font.color.rgb = C_PURPLE
+                    r2 = np.add_run()
+                    r2.text = tail
+                    r2.font.name = FONT_CN
+                    r2.font.size = fsz or Pt(13)
+                    r2.font.color.rgb = C_DARK
+                else:
+                    r1 = np.add_run()
+                    r1.text = new_txt
+                    r1.font.name = FONT_CN
+                    r1.font.size = fsz or Pt(13)
+                    r1.font.color.rgb = C_DARK
+
+
+def polish_slide7(slide):
+    """润色第 7 页：让跨季节失效的物理原因读起来更自然。"""
+    set_slide_title(slide, "问题二　一月训练的模型：冬季更准，春季反而误差上升")
+    replacements = {
+        "仅用 2023 年 1 月训练。加入气象后的误差变化（µg/m³），负值表示更准。":
+            "仅用 2023 年 1 月训练；下表为加入气象后的误差变化（µg/m³），负值表示预测更准。",
+        "一月训练的模型在冬季估得更准，到了春季反而把地面 NO₂ 估得偏低。":
+            "冬季边界层较浅，将一月学到的稀释规律直接套用到边界层抬高的春季时，地面 NO₂ 被系统性估低。",
+        "冬季模型加入气象后，夏秋四次比较的区间均跨零，改善程度仍不确定。":
+            "夏秋四次比较的 95% 区间均跨越零线，说明冬季模型的气象规律难以直接外推至其他季节。",
+    }
+    for sh in slide.shapes:
+        if sh.has_text_frame:
+            full = sh.text.strip()
+            if full in replacements:
+                p = sh.text_frame.paragraphs[0]
+                fsz = p.runs[0].font.size if p.runs else Pt(13)
+                sh.text_frame.clear()
+                np = sh.text_frame.paragraphs[0]
+                r1 = np.add_run()
+                r1.text = replacements[full]
+                r1.font.name = FONT_CN
+                r1.font.size = fsz or Pt(13)
+                r1.font.color.rgb = C_DARK
+
+
 def build_slide3(slide):
     clear_content_shapes(slide)
-    set_slide_title(slide, "数据血缘：7 个独立来源如何连到同一城市与同一小时？")
+    set_slide_title(slide, "数据血缘：七套独立观测如何汇入同一座城市、同一小时？")
 
     add_metric_columns(slide, [
         ("核心主源", "4 套", "地面 1,998.8 MB  火点 558.8 MB  气象 266.2 MB  卫星 196.28 MB", C_PURPLE),
@@ -180,21 +297,21 @@ def build_slide3(slide):
 
 def build_slide5(slide):
     clear_content_shapes(slide)
-    set_slide_title(slide, "问题一　火点滞后升幅差、未检出日对照与分层稳健性")
+    set_slide_title(slide, "问题一　火点之后，下风城市的 PM₂.₅ 真的涨得更多吗？")
 
     add_metric_columns(slide, [
         ("全样本 12h 升幅差", "+3.91 µg/m³", "4,299 个火点事件  95% 区间 [+1.64, +6.38]", C_PURPLE),
-        ("同钟点未检出对照", "+1.81 µg/m³", "1,566 对中火点日 +3.25  昼夜风场本身占一半以上", C_SLATE),
-        ("扣除对照后净差", "+1.45 µg/m³", "95% 区间 [−1.98, +4.99]  全部 8 个分层均跨零", C_AMBER),
+        ("同钟点无火对照日", "+1.81 µg/m³", "1,566 对中火点日 +3.25  昼夜变化本身占一半以上", C_SLATE),
+        ("扣除对照后净差", "+1.45 µg/m³", "95% 区间 [−1.98, +4.99]  八组分层均跨越零线", C_AMBER),
     ], top=1.06, height=0.82, show_arrows=True)
 
     add_picture_fitted(slide, FIG_DIR / "fig1_Q1_火点上下风与分层稳健性.png", left=0.55, top=1.95, max_w=12.23, max_h=4.42)
 
     add_rich_text(slide, 0.65, 6.42, 12.03, 0.42, [
         ("结论  ", 12, True, C_AMBER),
-        ("引入同网格同钟点未检出日排除昼夜混杂后，火点额外升幅", 11.5, False, C_DARK),
+        ("扣除同风况无火对照日的昼夜变化后，火点额外升幅", 11.5, False, C_DARK),
         ("不再显著", 12, True, C_AMBER),
-        ("，按规模、季节、南北与农田分层均跨零。", 11.5, False, C_DARK),
+        ("，按规模、季节、南北与农田分层均跨越零线。", 11.5, False, C_DARK),
     ])
     set_notes(slide,
               "如果不做对照，全样本第 12 小时下风比上风多升 3.91 微克每立方米；但引入风况相近的同网格同钟点未检出日后，对照日自身也有 +1.81，逐对相减净差仅 +1.45（区间跨零）。按聚集强火点、收获参考月、南北区域和农田分层检验，全部子组 95% 区间均跨零，说明零散火点不是长三角重污染日的主导推手。")
@@ -202,7 +319,7 @@ def build_slide5(slide):
 
 def build_slide8(slide):
     clear_content_shapes(slide)
-    set_slide_title(slide, "问题二　引入季节交互或非线性树模型，两年误差均显著下降")
+    set_slide_title(slide, "问题二　打破单一线性假设，两年预测误差均显著下降")
 
     add_metric_columns(slide, [
         ("原线性岭回归", "−6.2% / −3.7%", "2024 显著  2025 按周区间 [−0.42, +0.08] 跨零", C_SLATE),
@@ -214,9 +331,9 @@ def build_slide8(slide):
 
     add_rich_text(slide, 0.65, 6.42, 12.03, 0.42, [
         ("机制  ", 12, True, C_PURPLE),
-        ("一月模型春季失效源于边界层与 NO₂ 的", 11.5, False, C_DARK),
-        ("季节非线性关系", 12, True, C_PURPLE),
-        ("；加入季节交互或改用梯度提升树后，两年均稳定显著改善。", 11.5, False, C_DARK),
+        ("冬季浅混合层与春季高混合层的", 11.5, False, C_DARK),
+        ("垂直稀释规律不同", 12, True, C_PURPLE),
+        ("；引入季节交互或非线性树模型后，两年预测均稳定显著改善。", 11.5, False, C_DARK),
     ])
     set_notes(slide,
               "左图显示仅用 1 月训练在冬季改善、春季误差反增，提示气象效应随季节非线性变化。右图展示 26,229 个城市日上的对照实验：原线性岭回归 2025 年按周跨零；加入季节交互项（R² 突破 0.70，误差降 10.1% 和 13.7%）或换用 HGBDT 非线性树后，2024 与 2025 两年按周重抽样 95% 区间全部严格低于零。")
@@ -239,7 +356,7 @@ def build_slide9(slide):
 
 def build_slide10(slide):
     clear_content_shapes(slide)
-    set_slide_title(slide, "问题三　120 段过程的多污染物分型与 K-means 扩散聚类")
+    set_slide_title(slide, "问题三　120 段重污染的污染物特征与扩散条件分群")
 
     # 双栏结构顶栏，精准对应下方左右两图
     add_metric_columns(slide, [
@@ -254,7 +371,7 @@ def build_slide10(slide):
 
 def build_slide11(slide):
     clear_content_shapes(slide)
-    set_slide_title(slide, "问题三　典型个案：春季沙尘骤升与冬季二次无机盐累积")
+    set_slide_title(slide, "问题三　两类典型过程：春季沙尘突袭与冬季二次无机盐累积")
 
     add_metric_columns(slide, [
         ("2023-03-23 五城沙尘", "21.2 → 1,094.8 µg/m³", "地面粗颗粒凌晨飙升超 50 倍  获区域通报与 MERRA-2 印证", C_AMBER),
@@ -268,7 +385,7 @@ def build_slide11(slide):
 
 def build_slide12(slide):
     clear_content_shapes(slide)
-    set_slide_title(slide, "数据规模台账、复算核验与 AI 协作反思")
+    set_slide_title(slide, "数据台账、独立复算与 AI 协作体会")
 
     # 左栏：两个极简干净表格
     left_x, left_w = 0.65, 5.95
@@ -539,7 +656,10 @@ def main():
 
     prs = Presentation(str(BACKUP_PPT))
     build_slide3(prs.slides[2])
+    polish_slide4(prs.slides[3])
     build_slide5(prs.slides[4])
+    polish_slide6(prs.slides[5])
+    polish_slide7(prs.slides[6])
     build_slide8(prs.slides[7])
     build_slide9(prs.slides[8])
     build_slide10(prs.slides[9])
